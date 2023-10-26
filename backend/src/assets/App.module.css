@@ -1,0 +1,10 @@
+.c_dw{
+    display: block;
+    background: #121317;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.c_dw_li{
+    margin: 5px 0;
+}
