@@ -32,7 +32,7 @@ export default function Attributes(props){
 
     const addAttributeValue = (e) => {
         e.preventDefault();
-        const insert = document.querySelector('#insert');
+        const insert = document.querySelector('#insert1');
         insert.innerHTML = html;
     }
 
