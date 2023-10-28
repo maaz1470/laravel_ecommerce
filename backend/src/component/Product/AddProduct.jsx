@@ -126,9 +126,27 @@ export default function AddProduct(){
 
     }
 
-    const something = (e) => {
-        setAttributes([e])
+    const handleAttributes = (e) => {
+        console.log('something')
+        const data = e;
+        const defaultData = {
+            name: '',
+            value: ''
+        }
+        data.map((el) => {
+            return el.field = [
+                {
+                    ...el.field,
+                    defaultData
+                }
+            ];
+        })
+        setAttributes([
+            data
+        ])
     }
+
+    // console.log(attributes)
 
     
 
@@ -244,11 +262,11 @@ export default function AddProduct(){
                 
                 <label className="block text-sm">
                     <span className="text-gray-700 dark:text-gray-400">Attribute</span>
-                    <Select options={options} isMulti onChange={something} />
+                    <Select options={options} isMulti onChange={handleAttributes} />
                 </label>
 
                 
-                {Array.isArray(attributes[0]) && <Attributes count={attributes[0]} />}                    
+                {Array.isArray(attributes[0]) && <Attributes attribute={attributes[0]} changeAttribute={setAttributes} />}                    
                 
 
 
