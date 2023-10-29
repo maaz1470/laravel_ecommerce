@@ -135,11 +135,11 @@ export default function AddProduct(){
         }
         data.map((el) => {
             return el.field = [
-                {
-                    name: '',
-                    value: ''
-                }
-            ];
+                [
+                    ...el['field'],
+                    defaultData
+                ]
+            ]
         })
         setAttributes([
             data

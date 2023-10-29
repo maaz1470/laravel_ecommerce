@@ -24,12 +24,14 @@ export default function Attributes(props){
             value: ''
         }
         if(index >= 0 && index < attribute.length){
-            attribute[index].field.map(data => {
-                return data = [{
+            attribute[index].field.map((data, i) => {
+                return data = [
                     ...data,
                     newData
-                }]
+                ]
             })
+
+
             console.log('hoiche')
             changeAttribute([attribute])
             console.log(attribute[index].field)
