@@ -136,8 +136,8 @@ export default function AddProduct(){
         data.map((el) => {
             return el.field = [
                 {
-                    ...el.field,
-                    defaultData
+                    name: '',
+                    value: ''
                 }
             ];
         })

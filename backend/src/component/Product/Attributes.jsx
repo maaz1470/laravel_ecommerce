@@ -8,7 +8,7 @@ export default function Attributes(props){
             email: ''
         }
     ])
-    const {attribute,changeAttribute} = props;
+    const {attribute, changeAttribute} = props;
 
     console.log(attribute)
     
@@ -24,22 +24,19 @@ export default function Attributes(props){
             value: ''
         }
         if(index >= 0 && index < attribute.length){
-                attribute.map((data) => {
-                    return data.field = [
-                            {
-                                ...attribute[index].field,
-                                newData
-                            }
-                        ]
-                    
-                })
-                console.log(attribute)
-            changeAttribute([
-                attribute
-            ])
+            attribute[index].field.map(data => {
+                return data = [{
+                    ...data,
+                    newData
+                }]
+            })
+            console.log('hoiche')
+            changeAttribute([attribute])
+            console.log(attribute[index].field)
         }else{
             console.log('index not found', index)
         }
+        console.log('complete')
         console.log(attribute)
     }
 
