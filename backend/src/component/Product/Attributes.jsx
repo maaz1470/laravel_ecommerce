@@ -25,11 +25,16 @@ export default function Attributes(props){
         }
         if(index >= 0 && index < attribute.length){
             attribute[index].field.map((data, i) => {
-                return data = [
-                    ...data,
+                let totalField = attribute[index].field;
+                // totalField = [[]];
+                return attribute[index].field = [
+                    ...attribute[index].field,
                     newData
                 ]
             })
+
+            console.log('type check')
+
 
 
             console.log('hoiche')
