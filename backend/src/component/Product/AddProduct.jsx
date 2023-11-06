@@ -126,7 +126,6 @@ export default function AddProduct(){
     }
 
     const handleAttributes = (e) => {
-        console.log('something')
         const data = e;
         const defaultData = {
             name: '',
@@ -137,9 +136,7 @@ export default function AddProduct(){
                 defaultData
             ];
         })
-        setAttributes([
-            data
-        ])
+        setAttributes(data)
     }
 
     // console.log(attributes)
@@ -261,10 +258,18 @@ export default function AddProduct(){
                     <Select options={options} isMulti onChange={handleAttributes} />
                 </label>
 
+                {Array.isArray(attributes) && <Attributes attributes={attributes} changeAttribute={setAttributes} />}                    
                 
-                {Array.isArray(attributes[0]) && <Attributes attribute={attributes[0]} changeAttribute={setAttributes} />}                    
-                
-
+                <label className="block text-sm">
+                    <span className="text-gray-700 dark:text-gray-400">Price</span>
+                    <input
+                        name="name"
+                        onChange={handleChange}
+                        value={productInfo.name}
+                        className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        placeholder="Price"
+                    />
+                </label>
 
                 <button disabled={disabled} className="px-3 py-2 rounded bg-green-600 text-white text-md mt-5" type="submit">Submit</button>
                 
