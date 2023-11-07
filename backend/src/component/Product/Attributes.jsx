@@ -18,8 +18,6 @@ export default function Attributes(props) {
   const deleteAttributeInput = (e,parent, child) => {
     e.preventDefault();
     if (parent >= 0 && parent < attributes.length) {
-        // console.log(updatedSelfAttribute)
-        
         const remainingData = attributes.map((elem, indexs) => {
             if(parent == indexs){
                 const something = elem.field.filter((el, index) => index !== child)
@@ -29,10 +27,6 @@ export default function Attributes(props) {
         })
 
         console.log(remainingData)
-
-        // const remainingData = attributes[parent].field.filter((el, index) => {
-        //     return child !== index;
-        // })
 
         changeAttribute(remainingData)
 
